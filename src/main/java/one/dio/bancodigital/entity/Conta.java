@@ -2,6 +2,9 @@ package one.dio.bancodigital.entity;
 
 import one.dio.bancodigital.service.IConta;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Conta implements IConta {
 
     protected static final int AGENCIA_PADRAO = 1;
@@ -47,6 +50,7 @@ public abstract class Conta implements IConta {
     }
 
     protected void imprimirInfoComuns(){
+
         System.out.println(String.format("Titular: %s", cliente.getNome()));
         System.out.println(String.format("Agencia: %d",this.agencia));
         System.out.println(String.format("Numero: %d", this.numero));
