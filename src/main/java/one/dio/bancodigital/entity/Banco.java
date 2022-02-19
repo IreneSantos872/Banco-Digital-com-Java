@@ -67,13 +67,13 @@ public class Banco {
     }
 
     public void imprimirListaContas(){
-        System.out.println(String.format("===== LISTA DE CONTAS ======"));
+        System.out.println("===== LISTA DE CONTAS ======");
         for (Conta auxConta: this.contas) {
 
             if(auxConta.getClass().getName().equalsIgnoreCase("one.dio.bancodigital.entity.ContaCorrente"))
-                System.out.println(String.format("=== Conta Corrente ==== "));
+                System.out.println("=== Conta Corrente ==== ");
             else if (auxConta.getClass().getName().equalsIgnoreCase("one.dio.bancodigital.entity.ContaPoupanca"))
-                System.out.println(String.format("=== Conta Poupanca ==== "));
+                System.out.println("=== Conta Poupanca ==== ");
 
             System.out.println(String.format("Titular: %s", auxConta.cliente.getNome())
             +"  " + (String.format("Agencia: %d", auxConta.getAgencia())) + "  " + (String.format("Numero: %d", auxConta.getNumero()))
@@ -82,4 +82,11 @@ public class Banco {
         }
    }
 
+    @Override
+    public String toString() {
+        return "Banco{" +
+                "contas=" + contas +
+                ", cliente=" + cliente +
+                '}';
+    }
 }
